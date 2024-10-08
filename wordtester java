@@ -19,8 +19,8 @@ public class WordTester {
             System.out.println("Text: " + text);
             System.out.println("Is Palindrome: " + antics.isPalindrome(text));
             System.out.println("Is Abecedarian: " + antics.isAbecedarian(text));
-            System.out.println("As Pangram: " + antics.isPanagram(text));
-            System.out.println("Capitalized: " + antics.capitalizeFirstLetter(text));
+           // System.out.println("As Pangram: " + antics.isPanagram(text));
+           // System.out.println("Capitalized: " + antics.capitalizeFirstLetter(text));
             System.out.println("--------------------------------------------------");
         } while (!text.equalsIgnoreCase("exit"));
         System.out.println("Goodbye");
@@ -28,7 +28,6 @@ public class WordTester {
     }
 }
 
-// Remove the public keyword from the Antics class definition
 class antics {
 
     // Method to check if a word or sentence is a palindrome
