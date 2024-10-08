@@ -1,0 +1,69 @@
+import java.util.Scanner;
+
+/**
+ * Partner Lab 2 Tester Program
+ * @author Hellen Pacheco (main method)
+ */
+public class WordTester {
+    /**
+     * Method to test the Antics methods
+     * @param args Command-line arguments (not used)
+     */
+    public static void main(String[] args) {
+        // Tests words or sentences
+        String text;
+        Scanner input = new Scanner(System.in);
+        do {
+            System.out.print("Enter word or sentence (exit to end): ");
+            text = input.nextLine();
+            System.out.println("Text: " + text);
+            System.out.println("Is Palindrome: " + antics.isPalindrome(text));
+            System.out.println("Is Abecedarian: " + antics.isAbecedarian(text));
+            System.out.println("As Pangram: " + antics.isPanagram(text));
+            System.out.println("Capitalized: " + antics.capitalizeFirstLetter(text));
+            System.out.println("--------------------------------------------------");
+        } while (!text.equalsIgnoreCase("exit"));
+        System.out.println("Goodbye");
+        input.close();
+    }
+}
+
+// Remove the public keyword from the Antics class definition
+class antics {
+
+    // Method to check if a word or sentence is a palindrome
+    public static boolean isPalindrome(String text) {
+        String filteredText = text.toLowerCase().replaceAll("[^a-z]", "");  // Ignore case and non-letter characters
+        int length = filteredText.length();
+
+        for (int i = 0; i < length / 2; i++) {
+            if (filteredText.charAt(i) != filteredText.charAt(length - i - 1)) {
+                return false;  // If characters at any position don't match, it's not a palindrome
+            }
+        }
+        return true;  // If the loop completes without returning false, it's a palindrome
+    }
+
+    // Method to check if a word is abecedarian
+    public static boolean isAbecedarian(String text) {
+        String filteredText = text.toLowerCase().replaceAll("[^a-z]", "");  // Ignore case and non-letter characters
+
+        for (int i = 0; i < filteredText.length() - 1; i++) {
+            if (filteredText.charAt(i) > filteredText.charAt(i + 1)) {
+                return false;  // If any character is greater than the next, it's not abecedarian
+            }
+        }
+        return true;  // If the loop completes without returning false, it's abecedarian
+    }
+
+    // Placeholder for other methods like isPangram and capitalizeFirstLetter
+    public static boolean isPanagram(String text) {
+        // Implementation for Pangram (not provided)
+        return true;
+    }
+
+    public static String capitalizeFirstLetter(String text) {
+        // Implementation for capitalizeFirstLetter (not provided)
+        return text;
+    }
+}
