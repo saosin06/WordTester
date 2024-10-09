@@ -55,14 +55,31 @@ class antics {
         return true;  // If the loop completes without returning false, it's abecedarian
     }
 
-    // Placeholder for other methods like isPangram and capitalizeFirstLetter
-    public static boolean isPanagram(String text) {
-        // Implementation for Pangram (not provided)
-        return true;
+   /**
+     * This Method determines if the output is a pangram
+     * @param sentence
+     * @return answer, true/false
+     */
+    public static boolean isPangram(String sentence){
+        boolean answer = true;
+        for (char letter = 'a'; letter <= 'z'; letter++){
+            sentence = sentence.toLowerCase();
+            if (!sentence.contains(""+letter)){
+                answer = false;
+            }
+        }
+        return answer;
     }
 
-    public static String capitalizeFirstLetter(String text) {
-        // Implementation for capitalizeFirstLetter (not provided)
-        return text;
+    /**
+     * This method takes the first letter of the string and capitalizes it
+     * @param sentence
+     * @return string "upperWord + restOfWord"
+     */
+    public static String capitalizeFirstLetter(String sentence){
+        String caps = sentence.substring(0,1);
+        String upperWord = caps.toUpperCase();
+        String restOfWord = sentence.substring(1);
+        return upperWord+restOfWord;
     }
 }
